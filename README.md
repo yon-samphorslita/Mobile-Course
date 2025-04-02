@@ -2,8 +2,12 @@
 
 This project is a login and register flutter project that includes the required widgets. The buttons check the requirements of the text fields and the links below allow the user to route from one page to the other. 
 
-This is the login page :![Login_page](image.png)
-This is the register page :![Register_page](image-1.png)
+This is the login page :
+![Login_page](image.png)
+
+
+This is the register page :
+![Register_page](image-1.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
