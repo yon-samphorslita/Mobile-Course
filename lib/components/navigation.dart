@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   final int selectedIndex;
@@ -12,6 +13,9 @@ class CustomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const selectedColor = Color(0xFFFF8402);
+    const unselectedColor = Color(0xFF393939);
+
     return Padding(
       padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
       child: Container(
@@ -23,29 +27,43 @@ class CustomNavigationBar extends StatelessWidget {
         child: ClipRRect(
           child: BottomNavigationBar(
             currentIndex: selectedIndex,
-            selectedItemColor: const Color(0xFFFF8402),
-            unselectedItemColor: const Color(0xFF393939),
+            selectedItemColor: selectedColor,
+            unselectedItemColor: unselectedColor,
             onTap: onItemTapped,
             type: BottomNavigationBarType.fixed,
             selectedFontSize: 15,
             unselectedFontSize: 15,
             backgroundColor: Colors.white,
             elevation: 0,
-            items: const [
-              BottomNavigationBarItem(
+            items: [
+              const BottomNavigationBarItem(
                 icon: Center(child: Icon(Icons.search)),
                 label: 'Explore',
               ),
               BottomNavigationBarItem(
-                icon: Center(child: Icon(Icons.list)),
+                icon: Center(
+                  child: SvgPicture.asset(
+                    'assets/icons/note.svg',
+                    width: 24,
+                    height: 24,
+                    color: selectedIndex == 1 ? selectedColor : unselectedColor,
+                  ),
+                ),
                 label: 'My courses',
               ),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: Center(child: Icon(Icons.play_circle)),
                 label: 'Online course',
               ),
               BottomNavigationBarItem(
-                icon: Center(child: Icon(Icons.dashboard)),
+                icon: Center(
+                  child: SvgPicture.asset(
+                    'assets/icons/layer.svg',
+                    width: 24,
+                    height: 24,
+                    color: selectedIndex == 3 ? selectedColor : unselectedColor,
+                  ),
+                ),
                 label: 'Category',
               ),
             ],

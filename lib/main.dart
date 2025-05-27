@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 
-import 'landing_page.dart';
+import 'courseSearch.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: LandingPage()));
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Ubuntu',
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: CourseSearch(),
+    );
+  }
 }

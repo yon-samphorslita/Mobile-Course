@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:landing_ui/components/footer.dart';
 
 import 'components/article.dart';
 import 'components/category.dart';
 import 'components/course.dart';
+import 'components/header.dart';
 import 'components/navigation.dart';
 import 'components/promotioncard.dart';
 import 'components/teachercard.dart';
@@ -13,7 +15,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 2;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,20 +26,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Color(0xFF164F89)),
-        title: Image.asset(
-          'assets/images/image.png',
-          width: 152.4,
-          height: 30,
-          fit: BoxFit.contain,
-        ),
-        actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: () {}),
-          IconButton(icon: Icon(Icons.person), onPressed: () {}),
-        ],
-      ),
+      appBar: Header(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
@@ -296,187 +285,7 @@ class _LandingPageState extends State<LandingPage> {
               ),
             ),
             SizedBox(height: 50),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Image.asset('assets/images/image.png', width: 152),
-            ),
-            SizedBox(height: 50),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'About Us',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Contact Us',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'FaQs',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Community Forum',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Term of Service',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Careers',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Leadership',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Blog',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Social Impact',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Cookies Setting',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Terms',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Accessibility Statement',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Investors',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'GO Pro Course',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      'Affiliate',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Ubuntu',
-                        fontSize: 14,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 30),
-            Text(
-              'Certified',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Ubuntu',
-                fontSize: 14,
-              ),
-            ),
-            Center(child: Image.asset('assets/images/image14.png', width: 125)),
-            SizedBox(height: 60),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.facebook, size: 30),
-                SizedBox(width: 12),
-                Icon(Icons.insert_chart_rounded, size: 30),
-                SizedBox(width: 12),
-                Icon(Icons.video_library, size: 30),
-              ],
-            ),
-            SizedBox(height: 20),
-            Text(
-              '2023 Worktency, Inc. All rights reserved.',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
-            ),
+            Footer(),
           ],
         ),
       ),
